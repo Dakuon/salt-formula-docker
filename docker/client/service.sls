@@ -3,7 +3,7 @@
 include:
   - docker.client
 
-{%- for name, service in client.get('service', {}).iteritems() %}
+{%- for name, service in client.get('service', {}) | items %}
 {%- if service.get('enabled', True) %}
 
 {%- for vname, volume in service.get('volume', {}).iteritems() %}
